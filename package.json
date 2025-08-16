@@ -8,7 +8,7 @@
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm run dev",
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "build": "echo 'Backend deployment - no build required'",
+    "build": "echo 'No build required'",
     "start": "cd backend && npm start"
   },
   "keywords": ["ai", "summarizer", "meeting-notes", "groq", "react", "nodejs"],
