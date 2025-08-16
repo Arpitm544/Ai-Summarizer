@@ -1,0 +1,172 @@
+.summary-editor {
+  width: 100%;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.editor-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editor-title h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.editor-icon {
+  width: 20px;
+  height: 20px;
+  color: #667eea;
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.unsaved-indicator {
+  color: #f59e0b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.editor-content {
+  margin-bottom: 1rem;
+}
+
+.summary-textarea {
+  min-height: 300px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.text-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stat strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stat.changes {
+  color: #f59e0b;
+}
+
+.auto-save-info {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.auto-save-info .saving {
+  color: #667eea;
+}
+
+.auto-save-info .auto-save {
+  color: #f59e0b;
+}
+
+.auto-save-info .saved {
+  color: #4ade80;
+}
+
+.editor-tips {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+}
+
+.editor-tips h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.editor-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.editor-tips li {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.editor-tips li:before {
+  content: "•";
+  color: #667eea;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .editor-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .editor-actions {
+    justify-content: center;
+  }
+  
+  .editor-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .text-stats {
+    justify-content: center;
+  }
+  
+  .summary-textarea {
+    min-height: 250px;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ai-summarizer",
+  "version": "1.0.0",
+  "description": "AI-Powered Meeting Notes Summarizer & Sharer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start"
+  },
+  "keywords": ["ai", "summarizer", "meeting-notes", "groq", "react", "nodejs"],
+  "author": "AI Summarizer Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

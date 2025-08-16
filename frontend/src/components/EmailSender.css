@@ -1,0 +1,256 @@
+.email-sender {
+  width: 100%;
+}
+
+.email-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.email-header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  color: #667eea;
+}
+
+.email-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.summary-preview {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-preview h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.preview-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.preview-stats span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.preview-stats strong {
+  color: white;
+}
+
+.preview-content {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.email-form {
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.recipients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recipient-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.recipient-input .input {
+  flex: 1;
+}
+
+.remove-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+}
+
+.add-recipient {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.test-email-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.test-email-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+  color: #667eea;
+}
+
+.test-email-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.test-form {
+  margin-top: 1rem;
+}
+
+.test-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.email-tips {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.email-tips h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.email-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.email-tips li {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.email-tips li:before {
+  content: "•";
+  color: #667eea;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .email-header h2 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .preview-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .test-actions {
+    flex-direction: column;
+  }
+  
+  .recipient-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .remove-btn {
+    align-self: flex-end;
+    width: fit-content;
+  }
+}
