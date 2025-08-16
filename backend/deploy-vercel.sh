@@ -9,10 +9,10 @@ if ! command -v vercel &> /dev/null; then
     npm install -g vercel
 fi
 
-# Check if we're in the backend directory
-if [ ! -f "server.js" ]; then
-    echo "❌ Please run this script from the backend directory"
-    echo "   cd backend && ./deploy-vercel.sh"
+# Check if we're in the root directory
+if [ ! -f "package.json" ] || [ ! -d "backend" ]; then
+    echo "❌ Please run this script from the root directory (Ai-summarizer/)"
+    echo "   ./backend/deploy-vercel.sh"
     exit 1
 fi
 
@@ -29,8 +29,8 @@ else
     echo ""
 fi
 
-# Deploy to Vercel
-echo "📦 Deploying to Vercel..."
+# Deploy to Vercel from root directory
+echo "📦 Deploying to Vercel from root directory..."
 vercel
 
 echo ""

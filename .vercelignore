@@ -1,0 +1,34 @@
+# Frontend - not needed for backend deployment
+frontend/
+frontend/*
+
+# Backend files that shouldn't be deployed
+backend/uploads/
+backend/.env
+backend/.env.local
+backend/.env.production
+backend/*.log
+backend/node_modules/
+
+# General files
+node_modules/
+.env
+.env.local
+.env.production
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode/
+.idea/
+.git/
+.gitignore
+README.md
+DEPLOYMENT.md
+REFACTORING_SUMMARY.md
+SIMPLIFIED_ARCHITECTURE.md
+ARCHITECTURE.md
+fix-issues.md
+setup-*.sh
+quick-email-fix.sh

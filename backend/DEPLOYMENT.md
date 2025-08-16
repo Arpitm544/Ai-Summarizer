@@ -12,13 +12,9 @@
 npm i -g vercel
 ```
 
-### 2. Navigate to Backend Directory
+### 2. Deploy from Root Directory
 ```bash
-cd backend
-```
-
-### 3. Deploy to Vercel
-```bash
+# Make sure you're in the root directory (Ai-summarizer/)
 vercel
 ```
 
