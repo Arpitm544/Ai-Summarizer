@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 
 const app = express();
 
@@ -29,5 +30,5 @@ app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-// Export for Vercel serverless
-module.exports = app;
+// Export as serverless handler for Vercel
+module.exports = serverless(app);
