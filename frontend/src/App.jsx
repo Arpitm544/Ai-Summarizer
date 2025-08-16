@@ -5,6 +5,7 @@ import FileUpload from './components/FileUpload';
 import PromptInput from './components/PromptInput';
 import SummaryEditor from './components/SummaryEditor';
 import EmailSender from './components/EmailSender';
+import { API_ENDPOINTS } from './config';
 import './App.css';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('/api/summarize', {
+      const response = await fetch(API_ENDPOINTS.summarize, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ function App() {
 
   const handleEmailSend = async (emailData) => {
     try {
-      const response = await fetch('/api/email/send', {
+      const response = await fetch(`${API_ENDPOINTS.email}/send`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -127,6 +128,22 @@ function App() {
           <p className="subtitle">
             Upload transcripts, generate AI-powered summaries, and share with your team
           </p>
+          <div className="backend-status">
+            <button 
+              className="btn btn-secondary btn-sm"
+              onClick={async () => {
+                try {
+                  const response = await fetch(API_ENDPOINTS.health);
+                  const data = await response.json();
+                  toast.success(`Backend: ${data.status} - ${data.message}`);
+                } catch (error) {
+                  toast.error('Backend connection failed');
+                }
+              }}
+            >
+              Test Backend Connection
+            </button>
+          </div>
         </header>
 
         {/* Progress Steps */}

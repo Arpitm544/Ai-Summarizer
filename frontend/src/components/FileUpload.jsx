@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Upload, FileText, AlertCircle, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { API_ENDPOINTS } from '../config';
 
 const FileUpload = ({ onFileUpload }) => {
   const [uploading, setUploading] = useState(false);
@@ -33,7 +34,7 @@ const FileUpload = ({ onFileUpload }) => {
       const formData = new FormData();
       formData.append('transcript', file);
 
-      const response = await fetch('/api/upload', {
+      const response = await fetch(API_ENDPOINTS.upload, {
         method: 'POST',
         body: formData,
       });

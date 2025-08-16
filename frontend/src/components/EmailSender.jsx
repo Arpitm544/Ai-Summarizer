@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Send, Plus, X, Settings, TestTube } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { API_ENDPOINTS } from '../config';
 
 const EmailSender = ({ summaryId, onSend, summary }) => {
   const [recipients, setRecipients] = useState(['']);
@@ -76,7 +77,7 @@ const EmailSender = ({ summaryId, onSend, summary }) => {
 
     setIsSending(true);
     try {
-      const response = await fetch('/api/email/test', {
+      const response = await fetch(`${API_ENDPOINTS.email}/test`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
