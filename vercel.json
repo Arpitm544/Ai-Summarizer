@@ -1,21 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "backend/server-minimal.js": {
-      "maxDuration": 30
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/server-minimal.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/backend/server-minimal.js"
-    }
+  "builds": [
+    { "src": "backend/server-minimal.js", "use": "@vercel/node" }
   ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/server-minimal.js" }
+  ]
 }
