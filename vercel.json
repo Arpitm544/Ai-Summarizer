@@ -18,6 +18,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "buildCommand": "echo 'No build required for backend'",
+  "buildCommand": "cd backend && npm install --only=production && echo 'Minimal backend build complete'",
   "outputDirectory": "backend"
 }
