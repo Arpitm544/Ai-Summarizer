@@ -24,6 +24,23 @@ app.get('/api/test', (req, res) => {
   });
 });
 
+// Root endpoint for Render
+app.get('/', (req, res) => {
+  res.json({
+    message: 'AI Meeting Notes Summarizer Backend',
+    status: 'Running on Render',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      health: '/api/health',
+      test: '/api/test',
+      upload: '/api/upload',
+      summarize: '/api/summarize',
+      email: '/api/email'
+    },
+    documentation: 'Check the /api/health endpoint for more info'
+  });
+});
+
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
