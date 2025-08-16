@@ -1,0 +1,14 @@
+{
+  "name": "ai-summarizer-backend-minimal",
+  "version": "1.0.0",
+  "description": "Minimal backend for testing Vercel deployment",
+  "main": "server-minimal.js",
+  "scripts": {
+    "start": "node server-minimal.js",
+    "build": "echo 'Minimal backend build complete'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
