@@ -5,7 +5,5 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/index.js" }
-  ],
-  "buildCommand": "echo 'Building minimal backend' && ls -la backend/",
-  "outputDirectory": "backend"
+  ]
 }

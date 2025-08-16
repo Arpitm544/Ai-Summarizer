@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Upload, FileText, Sparkles, Edit3, Mail, Download, CheckCircle, AlertCircle } from 'lucide-react';
+import { Upload, FileText, Sparkles, Mail, Download, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
 import FileUpload from './components/FileUpload';
 import PromptInput from './components/PromptInput';
@@ -53,33 +53,12 @@ function App() {
     }
   };
 
-  const handleSummaryUpdate = async (editedSummary) => {
-    try {
-      const response = await fetch(`/api/summarize/${summaryData.summaryId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          editedSummary: editedSummary,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to update summary');
-      }
-
-      setSummaryData(prev => ({
-        ...prev,
-        summary: editedSummary,
-      }));
-      toast.success('Summary updated successfully!');
-    } catch (error) {
-      console.error('Summary update error:', error);
-      toast.error(error.message || 'Failed to update summary');
-    }
+  const handleSummaryUpdate = (editedSummary) => {
+    setSummaryData(prev => ({
+      ...prev,
+      summary: editedSummary,
+    }));
+    toast.success('Summary updated successfully!');
   };
 
   const handleEmailSend = async (emailData) => {
@@ -124,9 +103,7 @@ function App() {
     const a = document.createElement('a');
     a.href = url;
     a.download = `meeting-summary-${new Date().toISOString().split('T')[0]}.txt`;
-    document.body.appendChild(a);
     a.click();
-    document.body.removeChild(a);
     URL.revokeObjectURL(url);
     toast.success('Summary downloaded!');
   };

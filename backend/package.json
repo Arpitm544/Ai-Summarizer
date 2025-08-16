@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "echo 'Backend build complete'",
-    "vercel-build": "echo 'Vercel build complete'"
+    "build": "echo 'Backend build complete'"
   },
   "dependencies": {
     "cors": "^2.8.5",
