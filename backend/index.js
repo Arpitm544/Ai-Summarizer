@@ -31,3 +31,13 @@ app.use('*', (req, res) => {
 
 // Export for Vercel serverless
 module.exports = app;
+
+// Start server for Render/Heroku/etc (only if not on Vercel)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`📡 API endpoints available at http://localhost:${PORT}/api`);
+  });
+}
