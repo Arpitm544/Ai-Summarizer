@@ -2,10 +2,10 @@
   "name": "ai-summarizer-backend",
   "version": "1.0.0",
   "description": "Backend for AI-Powered Meeting Notes Summarizer",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "build": "echo 'Backend build complete'",
     "vercel-build": "echo 'Vercel build complete'"
   },
