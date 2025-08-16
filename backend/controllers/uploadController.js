@@ -4,7 +4,17 @@ module.exports = {
   async uploadFile(req, res) {
     try {
       const fileData = req.file;
-      const extractedText = await fileService.extractTextFromFile(fileData.path, fileData.originalname);
+      
+      // Handle both memory and disk storage
+      let extractedText;
+      if (fileData.buffer) {
+        // Memory storage (production/serverless)
+        extractedText = await fileService.extractTextFromBuffer(fileData.buffer, fileData.originalname);
+      } else {
+        // Disk storage (development)
+        extractedText = await fileService.extractTextFromFile(fileData.path, fileData.originalname);
+      }
+      
       const savedFile = await fileService.saveFileInfo(fileData, extractedText);
 
       res.json({

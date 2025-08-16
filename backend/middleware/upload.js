@@ -3,21 +3,29 @@ const path = require('path');
 const fs = require('fs').promises;
 
 // Configure multer for file upload
-const storage = multer.diskStorage({
-  destination: async (req, file, cb) => {
-    const uploadDir = path.join(__dirname, '../uploads');
-    try {
-      await fs.mkdir(uploadDir, { recursive: true });
-      cb(null, uploadDir);
-    } catch (error) {
-      cb(error);
+let storage;
+
+if (process.env.NODE_ENV === 'production') {
+  // Use memory storage for serverless environments
+  storage = multer.memoryStorage();
+} else {
+  // Use disk storage for development
+  storage = multer.diskStorage({
+    destination: async (req, file, cb) => {
+      const uploadDir = path.join(__dirname, '../uploads');
+      try {
+        await fs.mkdir(uploadDir, { recursive: true });
+        cb(null, uploadDir);
+      } catch (error) {
+        cb(error);
+      }
+    },
+    filename: (req, file, cb) => {
+      const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}-${file.originalname}`;
+      cb(null, uniqueName);
     }
-  },
-  filename: (req, file, cb) => {
-    const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}-${file.originalname}`;
-    cb(null, uniqueName);
-  }
-});
+  });
+}
 
 const fileFilter = (req, file, cb) => {
   const allowedTypes = ['.txt', '.docx'];
